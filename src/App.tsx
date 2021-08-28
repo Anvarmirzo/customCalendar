@@ -24,6 +24,7 @@ function App() {
 		fetch(`${URL}/events?date_gte=${startDateQuery}&date_lte=${endDateQuery}`)
 			.then((res) => res.json())
 			.then((data) => setEvents(data));
+		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
 	console.log(events);
 	return (
