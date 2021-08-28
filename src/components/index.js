@@ -1,3 +1,3 @@
 export * from './CalendarGrid';
-export * from './Header';
+export * from './Title';
 export * from './Monitor';

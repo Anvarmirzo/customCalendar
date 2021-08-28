@@ -1,30 +1,29 @@
-import React from 'react';
-import { Header, Monitor, CalendarGrid } from './components';
-
+import React, { useState } from 'react';
+import { Title, Monitor, CalendarGrid } from './components';
 import moment from 'moment';
+import { CalendarWrapper } from './styles/global';
+
 function App() {
 	moment.updateLocale('en', { week: { dow: 1 } });
-	const startDay = moment().startOf('month').startOf('week');
-	const endDay = moment().endOf('month').endOf('week');
+	const [today, setToday] = useState(moment());
+	const startDay = today.clone().startOf('month').startOf('week');
 
-	console.log('startDay - ', startDay.format('YYYY-MM-DD'));
-	console.log('endDay - ', endDay.format('YYYY-MM-DD'));
-
-	const calendar = [];
-	const day = startDay.clone();
-
-	while (!day.isAfter(endDay)) {
-		calendar.push(day.clone());
-		day.add(1, 'day');
-	}
-	console.log(calendar);
+	const prevHandler = () =>
+		setToday((prev) => prev.clone().subtract(1, 'month'));
+	const todayHandler = () => setToday(moment());
+	const nextHandler = () => setToday((prev) => prev.clone().add(1, 'month'));
 
 	return (
-		<div className='App'>
-			<Header />
-			<Monitor />
-			<CalendarGrid />
-		</div>
+		<CalendarWrapper>
+			<Title />
+			<Monitor
+				today={today}
+				prevHandler={prevHandler}
+				todayHandler={todayHandler}
+				nextHandler={nextHandler}
+			/>
+			<CalendarGrid startDay={startDay} today={today} />
+		</CalendarWrapper>
 	);
 }
 
