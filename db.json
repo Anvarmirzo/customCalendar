@@ -1,0 +1,40 @@
+{
+	"events": [
+		{
+			"id": 1,
+			"title": "Go to bath",
+			"description": "Go to bath",
+			"date": 1615155393
+		},
+		{
+			"id": 2,
+			"title": "Go to walk",
+			"description": "Go to walk 23-th August",
+			"date": 1629752516
+		},
+		{
+			"id": 3,
+			"title": "Go to sleep",
+			"description": "Go to sleep",
+			"date": 1629927200
+		},
+		{
+			"title": "New event",
+			"description": "some text",
+			"date": "1630010362",
+			"id": 4
+		},
+		{
+			"title": "and new",
+			"description": "text",
+			"date": "1630010444",
+			"id": 5
+		},
+		{
+			"title": "more one",
+			"description": "text",
+			"date": "1630010482",
+			"id": 6
+		}
+	]
+}

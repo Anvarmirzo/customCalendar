@@ -9,8 +9,7 @@ import {
 	WeekWrapper,
 } from './../../styles/global';
 
-export function CalendarGrid({ startDay, today }: any) {
-	const totalDays: number = 42;
+export function CalendarGrid({ startDay, today, totalDays }: any) {
 	const day = startDay.clone().subtract(1, 'day');
 	const daysArray = [...Array(totalDays)].map(() => day.add(1, 'day').clone());
 
